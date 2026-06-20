@@ -1,5 +1,7 @@
-import { getTurnos, saveTurno, deleteTurno } from './storage.js';
+import { getTurnos, saveTurno, deleteTurno, isTurnoOcupado } from './storage.js';
 import { validateTurno, formatFecha } from './validation.js';
+
+const SUCCESS_DISPLAY_MS = 3000;
 
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -23,9 +25,6 @@ function clearErrors() {
   ['nombre', 'email', 'fecha', 'hora'].forEach(f => setError(f, ''));
 }
 
-function isTurnoOcupado(fecha, hora) {
-  return getTurnos().some(t => t.fecha === fecha && t.hora === hora);
-}
 
 form.addEventListener('submit', e => {
   e.preventDefault();
@@ -50,7 +49,6 @@ form.addEventListener('submit', e => {
 
   saveTurno(data);
   form.reset();
-  const SUCCESS_DISPLAY_MS = 3000;
   mensajeExito.classList.remove('hidden');
   setTimeout(() => mensajeExito.classList.add('hidden'), SUCCESS_DISPLAY_MS);
 });
