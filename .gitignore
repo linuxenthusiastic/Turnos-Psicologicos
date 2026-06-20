@@ -1,4 +1,4 @@
-# dependencies
+:w# dependencies
 node_modules/
 
 # build output
@@ -26,3 +26,12 @@ Thumbs.db
 
 # vite cache
 .vite/
+
+skills-lock.json
+.claude
+.agents
+biblioteca
+
+
+
+

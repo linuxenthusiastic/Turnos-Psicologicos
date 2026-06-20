@@ -1,0 +1,211 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #f0f4f8;
+  color: #2d3748;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 2rem 0 1rem;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: #4a5568;
+}
+
+header p {
+  color: #718096;
+  margin-top: 0.25rem;
+  font-size: 0.95rem;
+}
+
+/* Nav tabs */
+nav {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: 2px solid #cbd5e0;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #718096;
+  transition: all 0.2s;
+}
+
+.tab-btn.active {
+  border-color: #667eea;
+  background: #667eea;
+  color: white;
+}
+
+/* Tab content */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Card wrapper */
+section.tab-content {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  color: #4a5568;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.6rem;
+}
+
+/* Form */
+.field {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #4a5568;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1.5px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #2d3748;
+  transition: border-color 0.2s;
+  background: #fff;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+input.invalid, select.invalid, textarea.invalid {
+  border-color: #fc8181;
+}
+
+.error {
+  display: block;
+  font-size: 0.78rem;
+  color: #e53e3e;
+  margin-top: 0.2rem;
+  min-height: 1rem;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 0.7rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #5a67d8;
+}
+
+/* Success message */
+.mensaje-exito {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: #c6f6d5;
+  color: #276749;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Turnos list */
+.turno-card {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.turno-info h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.turno-info p {
+  font-size: 0.82rem;
+  color: #718096;
+  margin-top: 0.2rem;
+}
+
+.turno-fecha {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #667eea;
+  white-space: nowrap;
+}
+
+.btn-cancelar {
+  background: none;
+  border: 1.5px solid #fc8181;
+  color: #e53e3e;
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.btn-cancelar:hover {
+  background: #fff5f5;
+}
+
+.sin-turnos {
+  text-align: center;
+  color: #a0aec0;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+}

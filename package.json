@@ -1,0 +1,17 @@
+{
+  "name": "turnos-psicologicos",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^4.1.7",
+    "vite": "^5.0.0",
+    "vitest": "^4.1.7"
+  }
+}

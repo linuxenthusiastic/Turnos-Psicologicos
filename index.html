@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turnos Psicológicos</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Consultorio Psicológico</h1>
+      <p>Sistema de reserva de turnos</p>
+    </header>
+
+    <nav>
+      <button class="tab-btn active" data-tab="reservar">Reservar turno</button>
+      <button class="tab-btn" data-tab="turnos">Mis turnos</button>
+    </nav>
+
+    <main>
+      <!-- TAB: Reservar -->
+      <section id="tab-reservar" class="tab-content active">
+        <h2>Nueva reserva</h2>
+        <form id="form-reserva">
+          <div class="field">
+            <label for="nombre">Nombre completo *</label>
+            <input type="text" id="nombre" placeholder="Ej: María González" />
+            <span class="error" id="error-nombre"></span>
+          </div>
+          <div class="field">
+            <label for="email">Email *</label>
+            <input type="email" id="email" placeholder="ejemplo@correo.com" />
+            <span class="error" id="error-email"></span>
+          </div>
+          <div class="field">
+            <label for="fecha">Fecha *</label>
+            <input type="date" id="fecha" />
+            <span class="error" id="error-fecha"></span>
+          </div>
+          <div class="field">
+            <label for="hora">Horario *</label>
+            <select id="hora">
+              <option value="">-- Seleccionar --</option>
+              <option>09:00</option>
+              <option>10:00</option>
+              <option>11:00</option>
+              <option>12:00</option>
+              <option>14:00</option>
+              <option>15:00</option>
+              <option>16:00</option>
+              <option>17:00</option>
+            </select>
+            <span class="error" id="error-hora"></span>
+          </div>
+          <div class="field">
+            <label for="motivo">Motivo de consulta</label>
+            <textarea id="motivo" rows="3" placeholder="Breve descripción (opcional)"></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Confirmar turno</button>
+        </form>
+        <div id="mensaje-exito" class="mensaje-exito hidden">
+          Turno reservado con éxito.
+        </div>
+      </section>
+
+      <!-- TAB: Turnos -->
+      <section id="tab-turnos" class="tab-content">
+        <h2>Turnos registrados</h2>
+        <div id="lista-turnos"></div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
