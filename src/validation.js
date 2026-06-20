@@ -1,11 +1,23 @@
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const HORA_REGEX  = /^([01]\d|2[0-3]):([0-5]\d)$/;
+const NOMBRE_MIN  = 2;
+
+export function esHoraValida(hora) {
+  return HORA_REGEX.test(hora);
+}
+
+function _validarNombre(nombre, errors) {
+  if (!nombre || !nombre.trim()) {
+    errors.nombre = 'El nombre es obligatorio.';
+  } else if (nombre.trim().length < NOMBRE_MIN) {
+    errors.nombre = 'El nombre debe tener al menos 2 caracteres.';
+  }
+}
 
 export function validateTurno(data) {
   const errors = {};
 
-  if (!data.nombre || !data.nombre.trim()) {
-    errors.nombre = 'El nombre es obligatorio.';
-  }
+  _validarNombre(data.nombre, errors);
 
   if (!data.email || !data.email.trim()) {
     errors.email = 'El email es obligatorio.';
